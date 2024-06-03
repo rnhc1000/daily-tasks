@@ -1,0 +1,28 @@
+footer {
+    
+    border-top: 1px solid rgba(218,148,27,1);
+
+
+
+}
+
+.footer-container {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    color: rgba(218,148,27,1);
+    
+    font-size: 1rem;  
+
+  
+}
+
+@media (max-width: 750px) {
+    .footer-container {
+        width: 75%;
+        font-size: 1rem;
+        justify-content: center;
+    }
+}

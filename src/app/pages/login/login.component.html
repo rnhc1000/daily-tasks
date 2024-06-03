@@ -1,0 +1,57 @@
+<header class="header-client">
+
+    <nav class="login-container">
+      <h1>Todo List</h1>
+  
+      <div class="login-menu-item">
+        <img src="../../../../../assets/icons/task.svg" alt="Tasks" />
+      </div>
+    </nav>
+  </header>
+  
+  <div class="login-form-container">
+    <form (ngSubmit)="submitHandler()" #myForm="ngForm" class="login-card login-form" >
+     <date-pipe />
+  
+      <div class="login-form-controls-container">
+        <div>
+          <input 
+          class="login-form-control" 
+          type="email" id="email" 
+          placeholder="Enter your email" 
+          #email="ngModel" 
+          ngModel 
+          required 
+          autofocus
+          >
+
+        </div>
+        <div>
+          <input 
+          class="login-form-control" 
+          type="password" 
+          placeholder="Password" 
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          ngModel
+          required
+          #password="ngModel"
+        >
+        <p class="error-label" *ngIf="!password.valid && password.touched">
+            This input is required.
+        </p>
+        </div>
+        <div>
+          <button type="submit" class="login-btn login-btn-primary">Sign in</button>
+        </div>
+        <div>
+          <span class="footer-container">or use</span>
+        </div>
+        <div> 
+          <button type="submit" class="login-btn login-btn-primary"><img src="../../../../../assets/icons/google.svg" alt="google icon"/></button>
+        </div>
+      </div>
+    </form>
+  </div>  
+<app-footer />
