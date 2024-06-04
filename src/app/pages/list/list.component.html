@@ -1,8 +1,5 @@
-<div class ="navig">
-
-</div>
 @if(!getListItems().length){
-    <div class="container">
+    <div class="container fadeIn fourth">
         <h1>Hi, Ricardo Ferreira!</h1>
         <h1>Enter your daily Tasks List</h1>
       <img
@@ -44,7 +41,7 @@
       }
     
       @if(listItemsStage('completed').length){
-      <h2 class = "containerOne">Completed</h2>
+      <h2 class = "container">Completed</h2>
       <app-input-list-item
         [inputListItems]="listItemsStage('completed')"
         (outputUpdateItemCheckbox)="updateItemCheckbox($event)"

@@ -100,7 +100,7 @@ export class ListComponent {
       text: 'No turning back!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, do it!',
+      confirmButtonText: 'Yes, just do it!',
     }).then((result) => {
       if (result.isConfirmed) {
         this.#setListItems.update((oldValue: IListItems[]) => {
@@ -114,11 +114,11 @@ export class ListComponent {
 
   public deleteAllItems() {
     Swal.fire({
-      title: 'Tem certeza?',
-      text: 'Você não poderá reverter isso!',
+      title: 'Are you sure?',
+      text: 'No turning back!!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Sim, delete tudo',
+      confirmButtonText: 'Yes, just do it!',
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem(ELocalStorage.MY_LIST);

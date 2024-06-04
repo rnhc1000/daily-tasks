@@ -10,6 +10,7 @@ import { InputListItemComponent } from './modules/components/input-list-item/inp
 import { LoginComponent } from './pages/login/login.component';
 import { ListComponent } from './pages/list/list.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     InputAddItemComponent,
     InputListItemComponent,
-    ListComponent
+    ListComponent,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

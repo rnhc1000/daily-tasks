@@ -2,8 +2,18 @@
   "users": [
     {
       "email": "ricardo@ferreiras.dev.br",
-      "password": "$2a$10$ZA8qqklqNy4xfCE1Sz3O5e4hI0ecHuoVizp3kGQf2OMfdVYEuLFd6",
+      "password": "$2a$10$zywDaEAadIyx0YNrpTrpn.BkxXQuS9WXkakmQ0ADDl48oJcWYAgRG",
       "id": 1
+    },
+    {
+      "email": "rnhc1000@hotmail.com",
+      "password": "$2a$10$EuNOUgaZz9qQFrmyF45AceKos8FeqMACsGSuhYWPwaylxTB.V6MhS",
+      "id": 2
+    },
+    {
+      "email": "ricardosilva@ferreiras.dev.br",
+      "password": "$2a$10$T6KUMwb0TRsMQM.4WRs/oegUIDXGXUb3SiPlmCc1CeqDpeCk1HtHC",
+      "id": 3
     }
   ]
 }
