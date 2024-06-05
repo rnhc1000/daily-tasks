@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
@@ -14,6 +14,8 @@ import { User } from '../modules/interface/iUser.interface';
 
 export class AuthService {
 
+  userChange: EventEmitter<any> =  new EventEmitter();
+
   constructor(
     private http:HttpClient,
     private userService: UserService
@@ -25,11 +27,13 @@ export class AuthService {
       password: data.password
     }
   ).pipe(
+    catchError(this.handleErrors),
     tap( response => {
+      this.userChange.emit(response);
       const user = this.userService.decodeUser(response);
       console.log(response);
     }),
-    catchError(this.handleErrors)
+    
   );
 
   }
@@ -50,14 +54,18 @@ export class AuthService {
       password: data.password
     }
   ).pipe(
+    catchError(this.handleErrors),
     tap(response => {
+      this.userChange.emit(response);
       const user = this.userService.decodeUser(response);
       console.log(user);
     }),
-    catchError(this.handleErrors)
+    
 
   )
   
 
   }
 }
+export { UserData, User };
+

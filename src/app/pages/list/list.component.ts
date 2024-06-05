@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { UserService } from '../../services/user.service';
 import Swal from 'sweetalert2';
 
 // Components
@@ -11,6 +12,7 @@ import { IListItems } from '../../modules/interface/IListItems.interface';
 // Enum
 import { ELocalStorage } from '../../modules/enums/ELocalStorage.enum';
 import { DatePipeComponent } from '../../modules/components/date-pipe/date-pipe.component';
+import { HeaderComponent } from '../../modules/components/header/header.component';
 import { FooterComponent } from "../../modules/components/footer/footer.component";
 
 @Component({
@@ -18,13 +20,24 @@ import { FooterComponent } from "../../modules/components/footer/footer.componen
     standalone: true,
     templateUrl: './list.component.html',
     styleUrl: './list.component.scss',
-    imports: [InputAddItemComponent, InputListItemComponent, DatePipeComponent, FooterComponent]
+    imports: [
+      InputAddItemComponent, 
+      InputListItemComponent, 
+      DatePipeComponent,
+      HeaderComponent, 
+      FooterComponent
+    ]
 })
 export class ListComponent {
   public addItem = signal(true);
+  public userService!: UserService;
 
   #setListItems = signal<IListItems[]>(this.#parseItems());
   public getListItems = this.#setListItems.asReadonly();
+  // public userName = this.userService.returnUser();
+
+
+
 
   #parseItems() {
     return JSON.parse(localStorage.getItem(ELocalStorage.MY_LIST) ?? '[]');

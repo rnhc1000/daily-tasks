@@ -11,8 +11,10 @@
       "id": 2
     },
     {
-      "email": "ricardosilva@ferreiras.dev.br",
-      "password": "$2a$10$T6KUMwb0TRsMQM.4WRs/oegUIDXGXUb3SiPlmCc1CeqDpeCk1HtHC",
+      "email": "ricardo@ferreira.dev.br",
+      "password": "$2a$10$xX9MT38Nr2evOy5Mk0L1we/Go12TpBpTvTla/CiTFoG0Pa11U2H4u",
+      "firstname": "Ricardo",
+      "lastname": "Ferreira",
       "id": 3
     }
   ]

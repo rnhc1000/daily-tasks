@@ -1,3 +1,4 @@
+<app-header />
 @if(!getListItems().length){
     <div class="container fadeIn fourth">
         <h1>Hi, Ricardo Ferreira!</h1>
@@ -41,7 +42,7 @@
       }
     
       @if(listItemsStage('completed').length){
-      <h2 class = "container">Completed</h2>
+      <h2>Completed</h2>
       <app-input-list-item
         [inputListItems]="listItemsStage('completed')"
         (outputUpdateItemCheckbox)="updateItemCheckbox($event)"
