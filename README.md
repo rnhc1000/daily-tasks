@@ -50,7 +50,7 @@ The design is structured as shown:
 - styles.css 
 
 ## _Screenshot_
-[![](./todo-list.png)](https://todo-list.ferreiras.dev.br)
+[![](./daily.png)](https://todo-list.ferreiras.dev.br)
 ## _Links_
 - Live Site URL: [https://todo-list.ferreiras.dev.br] 
 ## _Built with_

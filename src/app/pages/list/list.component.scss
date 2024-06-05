@@ -1,20 +1,21 @@
 :host {
     div.container {
-
-        height: 100vh;
+        margin: 1rem auto;
+        width: 100%;
+        height: calc(100vh - 130px - 90px);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
         h1 {
-            color: var(--primary);
-            font-size: 2rem;
+            color: var(--white);
+            font-size: 1.5rem;
         }
     }
 
     main.container {
-
+     
         height: calc(100vh - 130px - 90px);
         height: calc(100dvh - 130px - 90px);
 

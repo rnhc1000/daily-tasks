@@ -1,0 +1,14 @@
+.footer-container {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+  }
+
+  h5 {
+    color: var(--white);
+    margin: 0.5rem auto;
+    font-weight: 100;
+  }

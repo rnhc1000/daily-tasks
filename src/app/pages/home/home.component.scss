@@ -6,8 +6,9 @@
 }
 
 .container-home-text {
-    color: var(--primary);
+    color: var(--white);
     margin: 0.5rem auto;
+    text-align: center;
 }
 
 h1 {
@@ -74,3 +75,13 @@ img {
     -moz-animation-delay: 0.8s;
     animation-delay: 0.8s;
   }
+
+
+@media (max-width: 640px) {
+
+  .home-img {
+    width: 400px;
+    height: 200px;
+  }
+    
+}

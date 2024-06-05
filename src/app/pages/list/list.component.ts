@@ -37,8 +37,6 @@ export class ListComponent {
   // public userName = this.userService.returnUser();
 
 
-
-
   #parseItems() {
     return JSON.parse(localStorage.getItem(ELocalStorage.MY_LIST) ?? '[]');
   }

@@ -1,8 +1,8 @@
 <app-header />
 @if(!getListItems().length){
-    <div class="container fadeIn fourth">
+    <div class="container">
         <h1>Hi, Ricardo Ferreira!</h1>
-        <h1>Enter your daily Tasks List</h1>
+        <h1>Enter your daily tasks</h1>
       <img
         src="assets/img/undraw_save_to_bookmarks_re_8ajf.svg"
         alt="the list is empty"
@@ -15,14 +15,16 @@
       <button class="btn btn-primary" (click)="addItem.set(false)">
         Create a task list
       </button>
-      <app-footer />
+      
       } @else {
       <app-input-add-item
         [inputListItems]="getListItems()"
         (outputAddListItem)="getInputAndAddItem($event)"
       />
       }
+      
     </div>
+    <app-footer />
     } @else {
     <app-input-add-item
       [inputListItems]="getListItems()"
@@ -51,10 +53,10 @@
       />
       }
     </main>
-    
     <footer>
       <button class="btn btn-danger" (click)="deleteAllItems()">
         Delete all tasks
       </button>
     </footer>
+
     }
