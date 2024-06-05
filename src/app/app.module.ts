@@ -11,17 +11,22 @@ import { LoginComponent } from './pages/login/login.component';
 import { ListComponent } from './pages/list/list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './modules/components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HomeComponent,
     DatePipeComponent,
     LoginComponent,
+    HeaderComponent,
     FooterComponent,
     InputAddItemComponent,
     InputListItemComponent,

@@ -1,14 +1,4 @@
-<header class="header">
-
-  <nav class="login-container fadeIn fourth">
-    <h1>Todo List</h1>
-
-    <div class="login-menu-item">
-      <img src="../../../../../assets/icons/task.svg" alt="Tasks" />
-    </div>
-  </nav>
-</header>
-
+<app-header />
 <div class="login-form-container">
   <form (ngSubmit)="submitHandler()" #myForm="ngForm" class="login-card login-form fadeIn fourth">
     <date-pipe />
@@ -34,9 +24,8 @@
           Switch to {{ !formMode ? 'Register' : 'Login' }}
         </span>
       </div>
-      <div>
-        <button type="submit" class="login-btn login-btn-primary"><img src="../../../../../assets/icons/google.svg"
-            alt="google icon" /></button>
+      <div class="login-btn login-btn-primary fadeIn fourth">
+        <h1>Daily Tasks</h1>
       </div>
     </div>
   </form>

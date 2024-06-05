@@ -1,105 +1,47 @@
 :host {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
- 
     div.container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-  
-      h1 {
-        color: var(--white);
-        font-size: 2rem;
-      }
+
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+        }
     }
 
-
-  
     main.container {
-      height: calc(100vh - 130px - 90px);
-      height: calc(100dvh - 130px - 90px);
-  
-      overflow-y: auto;
-  
-      &::-webkit-scrollbar {
-        width: 4px;
-      }
-  
-      &::-webkit-scrollbar-track {
-        background: var(--black-010);
-      }
-  
-      &::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 5px;
-      }
+
+        height: calc(100vh - 130px - 90px);
+        height: calc(100dvh - 130px - 90px);
+
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--black-010);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
     }
-  
+
     footer {
-      height: 90px;
-      width: 100%;
-  
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  
-      border-top: 1px solid var(--primary);
-    }
+        height: 90px;
+        width: 100%;
 
-@-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @-moz-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fadeIn {
-    opacity: 0;
-    -webkit-animation: fadeIn ease-in 1;
-    -moz-animation: fadeIn ease-in 1;
-    animation: fadeIn ease-in 1;
-  
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
-  }
-  
-  .fadeIn.fourth {
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-  }
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-  }
+        border-top: 1px solid var(--primary);
+    }
+}
