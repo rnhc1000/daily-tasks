@@ -10,8 +10,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
+
 export class HeaderComponent implements OnInit{
-  user?: UserData ;
+  user?: UserData;
 
   constructor(
     private authService: AuthService
