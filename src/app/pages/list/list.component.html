@@ -1,4 +1,5 @@
 <app-header />
+
 @if(!getListItems().length){
     <div class="container">
         <h1>Hi, Ricardo Ferreira!</h1>
@@ -16,6 +17,7 @@
         Create a task list
       </button>
       
+      
       } @else {
       <app-input-add-item
         [inputListItems]="getListItems()"
@@ -24,16 +26,16 @@
       }
       
     </div>
-    <app-footer />
     } @else {
     <app-input-add-item
       [inputListItems]="getListItems()"
       (outputAddListItem)="getInputAndAddItem($event)"
     />
+    }
     
     <main class="container">
       @if(listItemsStage('pending').length){
-      <h2>To be done</h2>
+      <h2>To be done!</h2>
       <app-input-list-item
         [inputListItems]="listItemsStage('pending')"
         (outputUpdateItemCheckbox)="updateItemCheckbox($event)"
@@ -44,7 +46,7 @@
       }
     
       @if(listItemsStage('completed').length){
-      <h2>Completed</h2>
+      <h2>Completed!</h2>
       <app-input-list-item
         [inputListItems]="listItemsStage('completed')"
         (outputUpdateItemCheckbox)="updateItemCheckbox($event)"
@@ -55,8 +57,8 @@
     </main>
     <footer>
       <button class="btn btn-danger" (click)="deleteAllItems()">
-        Delete all tasks
+        Delete all tasks !?
       </button>
     </footer>
-
-    }
+  
+    

@@ -14,12 +14,16 @@ const routes: Routes = [
   component: HomeComponent
 },
 {
-    path: 'login',
-    component: LoginComponent
+  path: 'login',
+  component: LoginComponent
 },
 {
-    path: 'tasks',
-    component: ListComponent
+  path: 'tasks',
+  component: ListComponent
+}, 
+{
+  path: 'logout',
+  component: HomeComponent
 }
 ];
 

@@ -1,12 +1,21 @@
 :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
     div.container {
-        margin: 1rem auto;
-        width: 100%;
-        height: calc(100vh - 130px - 90px);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    
+        .btn-primary,
+        app-input-add-item {
+          margin-top: 30px;
+          width: 100%;
+        }
+      
 
         h1 {
             color: var(--white);
@@ -32,6 +41,10 @@
         &::-webkit-scrollbar-thumb {
             background: var(--primary);
             border-radius: 5px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem auto;
         }
     }
 

@@ -2,8 +2,8 @@
     width: 100%;
   
     h1 {
-      font-size: 18px;
-      margin: 18px 0;
+      font-size: 1.5rem;
+      margin: 1rem 0;
       color: var(--white);
       text-align: center;
     }
@@ -14,8 +14,8 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-  
-      border-bottom: 2px solid var(--black-010);
+      border-bottom: 1px solid var(--primary);
+      margin: 1rem auto;
     }
   
     .remove-margin-bottom {
