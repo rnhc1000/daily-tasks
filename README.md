@@ -1,7 +1,7 @@
 # task-list - Manage your daily tasks
-This is a simple personal app to add small remainders of the tasks you have to tackle every single day. Simply writen dow a quick note about a task, add it to a list and you're done. It is implemented
-like a FIFO (First In First Out), using Angulat 17+ as the frontend framework to practice new skills. 
-The idea is just to have an easy and quick remainder of the tasks completed and to be completed at the end of the day, without any of the common burden of other apps. The goal is to have an easy online tool to quicky write down my tasks and no longer using Post-it all over the place.
+This is a simple personal app to add small reminders for the tasks you need to tackle every single day. Simply jot down a quick note about a task, add it to a list, and you're done. It's implemented using Angular 17+ as the frontend framework to practice new skills. The idea is to have an easy and quick reminder of completed and pending tasks at the end of the day, without the usual burden of other apps. So, tired of a thousand clicks and a complex UI decided to create an uncomplicated online tool for quickly noting my tasks, eliminating the need for Post-it notes all over the place. The roadmap for new features will be as follows:
+
+If you need any further adjustments, feel free to let me know. 😊
 The roadmap of new features will be as follows:
 
 ## _Roadmap of Future App Features_ 
@@ -110,7 +110,7 @@ export class InputAddItemComponent {
 }
 ``` 
 ## _Continued development_
-- Next step: Persist the tasks in a DB 
+- Next step: Persist the tasks in a DB, Firebase/MongoDB 
 ### _Useful resources_
 - [https://angular.io] Mandatory stop by to reaaly know the intrimcacies of Angular.
 - [https://material.angular.io/] Material Design components for Angular
