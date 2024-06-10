@@ -26,7 +26,7 @@ import { FooterComponent } from "../../modules/components/footer/footer.componen
       DatePipeComponent,
       HeaderComponent, 
       FooterComponent
-    ]
+    ],
 })
 export class ListComponent {
   public addItem = signal(true);
