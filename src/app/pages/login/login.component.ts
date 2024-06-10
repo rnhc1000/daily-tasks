@@ -29,8 +29,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
-  ) {
+    private router: Router ) {
 
   }
 
@@ -68,7 +67,7 @@ export class LoginComponent implements OnInit {
           error => this.handleErrors(error)
         );
       }
-      
+
       console.log(this.loginRegisterForm.value);
       this.loginRegisterForm.form.reset();
     }

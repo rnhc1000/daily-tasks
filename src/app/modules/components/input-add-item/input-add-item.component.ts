@@ -7,7 +7,7 @@ import {
   Output,
   ViewChild,
   inject,
-} from '@angular/core';
+  } from '@angular/core';
 
 // Interfaces
 import { NgClass } from '@angular/common';
@@ -19,7 +19,7 @@ import { DatePipeComponent } from "../date-pipe/date-pipe.component";
     standalone: true,
     templateUrl: './input-add-item.component.html',
     styleUrl: './input-add-item.component.scss',
-    imports: [NgClass, DatePipeComponent]
+    imports: [NgClass, DatePipeComponent],
 })
 export class InputAddItemComponent {
   #cdr = inject(ChangeDetectorRef);

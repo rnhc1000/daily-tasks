@@ -1,64 +1,50 @@
-<app-header />
+<header>
+  <app-header />
+</header>
+
 
 @if(!getListItems().length){
-    <div class="container">
-        <h1>Hi, Ricardo Ferreira!</h1>
-        <h1>Enter your daily tasks</h1>
-      <img
-        src="assets/img/undraw_save_to_bookmarks_re_8ajf.svg"
-        alt="the list is empty"
-        loading="eager"
-      />
-      <br>
-      <date-pipe />
-        
-      @if(addItem()){
-      <button class="btn btn-primary" (click)="addItem.set(false)">
-        Create a task list
-      </button>
-      
-      
-      } @else {
-      <app-input-add-item
-        [inputListItems]="getListItems()"
-        (outputAddListItem)="getInputAndAddItem($event)"
-      />
-      }
-      
-    </div>
-    } @else {
-    <app-input-add-item
-      [inputListItems]="getListItems()"
-      (outputAddListItem)="getInputAndAddItem($event)"
-    />
+<div class="container fadeIN fourth">
+  <h1>Hi, Ricardo Ferreira!</h1>
+  <h1>Enter your daily tasks</h1>
+  <img src="assets/img/undraw_save_to_bookmarks_re_8ajf.svg" alt="the list is empty" loading="eager" />
+  <br>
+  <date-pipe />
+
+  @if(addItem()){
+  <button class="btn btn-primary" (click)="addItem.set(false)">
+    Create a task list
+  </button>
+
+
+  } @else {
+  <app-input-add-item [inputListItems]="getListItems()" (outputAddListItem)="getInputAndAddItem($event)" />
+  }
+
+</div>
+} @else {
+<app-input-add-item [inputListItems]="getListItems()" (outputAddListItem)="getInputAndAddItem($event)" />
+}
+
+<main class="container">
+  <section>
+    @if(listItemsStage('pending').length){
+    <h2>To be done!</h2>
+    <app-input-list-item [inputListItems]="listItemsStage('pending')"
+      (outputUpdateItemCheckbox)="updateItemCheckbox($event)" (outputUpdateItemText)="updateItemText($event)"
+      (outputDeleteItem)="deleteItem($event)" />
+
     }
-    
-    <main class="container">
-      @if(listItemsStage('pending').length){
-      <h2>To be done!</h2>
-      <app-input-list-item
-        [inputListItems]="listItemsStage('pending')"
-        (outputUpdateItemCheckbox)="updateItemCheckbox($event)"
-        (outputUpdateItemText)="updateItemText($event)"
-        (outputDeleteItem)="deleteItem($event)"
-      />
-  
-      }
-    
-      @if(listItemsStage('completed').length){
-      <h2>Completed!</h2>
-      <app-input-list-item
-        [inputListItems]="listItemsStage('completed')"
-        (outputUpdateItemCheckbox)="updateItemCheckbox($event)"
-        (outputUpdateItemText)="updateItemText($event)"
-        (outputDeleteItem)="deleteItem($event)"
-      />
-      }
-    </main>
-    <footer>
-      <button class="btn btn-danger" (click)="deleteAllItems()">
-        Delete all tasks !?
-      </button>
-    </footer>
-  
-    
+
+    @if(listItemsStage('completed').length){
+    <h2>Completed!</h2>
+    <app-input-list-item [inputListItems]="listItemsStage('completed')"
+      (outputUpdateItemCheckbox)="updateItemCheckbox($event)" (outputUpdateItemText)="updateItemText($event)"
+      (outputDeleteItem)="deleteItem($event)" />
+    <button class="btn btn-danger" (click)="deleteAllItems()">
+      Delete all tasks !?
+    </button>
+    }
+  </section>
+</main>
+<app-footer />
