@@ -14,6 +14,7 @@ import { ELocalStorage } from '../../modules/enums/ELocalStorage.enum';
 import { DatePipeComponent } from '../../modules/components/date-pipe/date-pipe.component';
 import { HeaderComponent } from '../../modules/components/header/header.component';
 import { FooterComponent } from "../../modules/components/footer/footer.component";
+import { LogoutComponent } from '../../modules/components/logout/logout.component';
 
 @Component({
     selector: 'app-list',
@@ -25,12 +26,18 @@ import { FooterComponent } from "../../modules/components/footer/footer.componen
       InputListItemComponent, 
       DatePipeComponent,
       HeaderComponent, 
-      FooterComponent
+      FooterComponent,
+      LogoutComponent
     ],
 })
 export class ListComponent {
   public addItem = signal(true);
   public userService!: UserService;
+  buttonColor = 'btn-primary';
+
+  changeButtonColor() {
+    this.buttonColor = 'btn-sucess';
+  }
 
   #setListItems = signal<IListItems[]>(this.#parseItems());
   public getListItems = this.#setListItems.asReadonly();

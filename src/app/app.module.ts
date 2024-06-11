@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './modules/components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LogoutComponent } from './modules/components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { HomeComponent } from './pages/home/home.component';
     InputAddItemComponent,
     InputListItemComponent,
     ListComponent,
-    HttpClientModule
+    HttpClientModule,
+    LogoutComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

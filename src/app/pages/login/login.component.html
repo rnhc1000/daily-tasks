@@ -10,24 +10,22 @@
       <div>
         <input class="login-form-control" type="email" id="email" placeholder="Enter your email" [(ngModel)]="email"
           name="email" required autofocus>
-
       </div>
       <div>
         <input class="login-form-control" type="password" id="password" name="password"
           placeholder="Enter your password" [(ngModel)]="password" name="password" required>
-
       </div>
       <div>
-        <button type="submit" class="login-btn login-btn-primary fadeIn fourth">
+        <button type="submit" class="underlineHover login-btn login-text login-btn-primary ">
           {{ formMode ? 'Register' : 'Login'}}
         </button>
       </div>
       <div>
-        <span class="footer-container underlineHover" onkeydown="" (click)="toggleMode()">
+        <h2 class="login-text underlineHover" onkeydown="" (click)="toggleMode()">
           Switch to {{ !formMode ? 'Register' : 'Login' }}
-        </span>
+        </h2>
       </div>
-      <div class="login-btn login-btn-primary fadeIn fourth">
+      <div class="login-text fadeIn fourth">
         <h1>Daily Tasks</h1>
       </div>
     </div>
