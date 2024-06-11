@@ -1,23 +1,33 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-html,
-body {
-    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95)), url('../../assets/img/todo.webp');
+input, button, textarea, select {
+    font: inherit;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html
+ {
+    margin: 0 auto;
+    background-image: linear-gradient(.25turn, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95)), url('../../assets/img/todo.webp');
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
 }
 
 body {
-    margin: 0;
+    min-height: 100dvh;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol";
-    box-sizing: border-box;
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -27,31 +37,41 @@ h1 {
     font-weight: 400;
     line-height: 100%;
     
-    margin: 0;
+    margin: 0.5rem auto;
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
     color: var(--primary);
+    text-wrap: balance;
 }
 
-h2,
+h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 100%;
+    margin: 0.5rem auto;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+      text-decoration: none;
+      color: var(--white);
+      text-wrap: pretty;
+      text-align: center;
+
+}
+
 h3 {
-    font-size: 1.5 rem;
+    font-size: 2.0rem;
     font-weight: 400;
     line-height: 100%;
     margin: 0;
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
+      text-decoration: none;
+      color: var(--white);
+      text-wrap: balance;
 
-}
-
-h1,
-h2,
-h3,
-a {
-    color: var(--white);
-    text-decoration: none;
 }
 
 h5 {
@@ -62,6 +82,8 @@ h5 {
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
+      text-wrap: balance;
+
 
 }
 
@@ -70,10 +92,11 @@ p {
     font-size: 1rem;
     margin: 0.75rem 0;
     font-weight: 200;
-
+    text-wrap: pretty;
 }
 
 ul {
     list-style: none;
     padding: 0;
 }
+

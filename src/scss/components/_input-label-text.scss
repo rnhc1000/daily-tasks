@@ -17,14 +17,14 @@
         border: none;
         background: none;
         color: var(--white);
-        font-size: 1.25rem;
-        font-weight: 100;
+        font-size: 2.5rem;
+        font-weight: 200;
         outline: 0;
-        margin-left: 10px;
+        margin-left: 1rem;
     }
     input[type="checkbox"] {
         appearance: none;
-        background-color: #FFC100;
+        background-color:var(--primary);
         height: 20px;
         width: 20px;
         border: none;
@@ -37,6 +37,10 @@
         }
 
     }
+    input[type="checkbox"]:checked {
+        background: var(--green);
+    }
+
     input[type="checkbox"]:hover {
         background: var(--green);
     }

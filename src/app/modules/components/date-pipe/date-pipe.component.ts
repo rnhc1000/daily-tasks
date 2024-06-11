@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   imports: [CommonModule],
   template: `
   <div>
-    <p class="date-pipe-text"> {{date | date:'fullDate'}} </p>
+    <h2 class="date-pipe-text"> {{ date | date:'fullDate' }} </h2>
 </div>
   `
 })

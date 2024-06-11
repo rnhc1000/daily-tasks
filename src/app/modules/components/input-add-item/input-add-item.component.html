@@ -1,10 +1,15 @@
-<header [ngClass]="{
+<header>
+  <app-logout />
+</header>
+<section [ngClass]="{
     'has-items': inputListItems.length
   }">
-  <h1>Daily Tasks</h1>
+ 
+  <h1>Tasks</h1>
 
   @if(inputListItems.length){
   <date-pipe />
+  <br />
   }
 
   <div [ngClass]="{
@@ -20,4 +25,4 @@
         (click)="focusAndAddItem(inputText.value)"></button>
     </label>
   </div>
-</header>
+</section>
