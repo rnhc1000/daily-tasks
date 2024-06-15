@@ -2,17 +2,18 @@ import { Component, signal } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import Swal from 'sweetalert2';
 
-// Components
-import { InputAddItemComponent } from '../../modules/components/input-add-item/input-add-item.component';
-import { InputListItemComponent } from '../../modules/components/input-list-item/input-list-item.component';
 
 // Interface
 import { IListItems } from '../../modules/interface/IListItems.interface';
 
 // Enum
 import { ELocalStorage } from '../../modules/enums/ELocalStorage.enum';
-import { DatePipeComponent } from '../../modules/components/date-pipe/date-pipe.component';
-import { HeaderComponent } from '../../modules/components/header/header.component';
+
+// Components
+import { InputAddItemComponent } from '../../modules/components/input-add-item/input-add-item.component';
+import { InputListItemComponent } from '../../modules/components/input-list-item/input-list-item.component';
+import { DatePipeComponent } from '../../modules/components/footer/date-pipe/date-pipe.component';
+import { NavbarComponent } from '../../modules/components/navbar/navbar.component';
 import { FooterComponent } from "../../modules/components/footer/footer.component";
 import { LogoutComponent } from '../../modules/components/logout/logout.component';
 
@@ -25,7 +26,7 @@ import { LogoutComponent } from '../../modules/components/logout/logout.componen
       InputAddItemComponent, 
       InputListItemComponent, 
       DatePipeComponent,
-      HeaderComponent, 
+      NavbarComponent, 
       FooterComponent,
       LogoutComponent
     ],
@@ -116,7 +117,7 @@ export class ListComponent {
     Swal.fire({
       title: 'Are you sure?',
       text: 'No turning back!',
-      icon: 'warning',
+      icon: 'error',
       showCancelButton: true,
       confirmButtonText: 'Yes, just do it!',
     }).then((result) => {
@@ -134,9 +135,9 @@ export class ListComponent {
     Swal.fire({
       title: 'Are you sure?',
       text: 'No turning back!!',
-      icon: 'warning',
+      icon: 'error',
       showCancelButton: true,
-      confirmButtonText: 'Yes, just do it!',
+      confirmButtonText: `Yes, just do it!`,
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem(ELocalStorage.MY_LIST);

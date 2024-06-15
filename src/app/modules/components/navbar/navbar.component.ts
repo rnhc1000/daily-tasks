@@ -4,14 +4,14 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-navbar',
   standalone: true,
   imports:[ CommonModule, RouterLink],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
 })
 
-export class HeaderComponent implements OnInit{
+export class NavbarComponent implements OnInit{
   user?: UserData;
 
   constructor(

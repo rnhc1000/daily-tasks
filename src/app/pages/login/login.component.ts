@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DatePipeComponent } from '../../modules/components/date-pipe/date-pipe.component';
-import { HeaderComponent } from '../../modules/components/header/header.component';
+import { DatePipeComponent } from '../../modules/components/footer/date-pipe/date-pipe.component';
+import { NavbarComponent } from '../../modules/components/navbar/navbar.component';
 import { FooterComponent } from '../../modules/components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { NgForm, FormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
-  imports: [FormsModule, CommonModule, DatePipeComponent, HeaderComponent, FooterComponent]
+  imports: [NavbarComponent, FormsModule, CommonModule, DatePipeComponent, FooterComponent]
 })
 export class LoginComponent implements OnInit {
 
