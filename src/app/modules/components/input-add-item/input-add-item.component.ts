@@ -12,8 +12,8 @@ import {
 // Interfaces
 import { NgClass } from '@angular/common';
 import { IListItems } from '../../interface/IListItems.interface';
-import { DatePipeComponent } from "../date-pipe/date-pipe.component";
-import { HeaderComponent } from "../header/header.component";
+import { DatePipeComponent } from "../footer/date-pipe/date-pipe.component";
+import { NavbarComponent } from "../navbar/navbar.component";
 import { LogoutComponent } from '../logout/logout.component';
 import { FooterComponent } from '../footer/footer.component';
 
@@ -22,7 +22,7 @@ import { FooterComponent } from '../footer/footer.component';
     standalone: true,
     templateUrl: './input-add-item.component.html',
     styleUrl: './input-add-item.component.scss',
-    imports: [NgClass, DatePipeComponent, HeaderComponent, LogoutComponent, FooterComponent]
+    imports: [NgClass, DatePipeComponent, NavbarComponent, LogoutComponent, FooterComponent]
 })
 export class InputAddItemComponent {
   #cdr = inject(ChangeDetectorRef);

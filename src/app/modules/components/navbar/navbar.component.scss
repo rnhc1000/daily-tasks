@@ -1,0 +1,97 @@
+header {
+    background-color: rgba(245, 132, 3, 0.1);
+    box-shadow: 0 2px 3px rgba(161, 67, 12, 0.5);
+}
+
+header nav#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 6rem;
+}
+
+header nav#navbar .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+header nav#navbar ul.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+header nav#navbar ul.nav-list li a {
+    color: var(--white);
+    font-size: 1.5rem;
+    text-decoration: none;
+
+}
+
+header nav#navbar ul.nav-list li a:hover {
+    font-size: 1.75rem;
+    color: rgb(235, 122, 16);
+}
+
+header nav#navbar .nav-brand img {
+    width: 96px;
+    height: 96px;
+}
+
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fadeIn.fourth {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
