@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   template: `
   <div>
     <h2 class="date-pipe-text"> {{ date | date:'fullDate' }} </h2>
-</div>
+  </div>
   `
 })
 export class DatePipeComponent {

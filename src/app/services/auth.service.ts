@@ -22,7 +22,7 @@ export class AuthService {
   ) { }
 
   register(data: UserData) {
-    return this.http.post<UserToken>('http://192.168.15.11:4000/signup', {
+    return this.http.post<UserToken>('http://192.168.15.11:8080/login', {
       email: data.email,
       password: data.password
     }
@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   login(data: UserData) {
-    return this.http.post<UserToken>('http://192.168.15.11:4000/login', {
+    return this.http.post<UserToken>('http://192.168.15.11:8080/login', {
       email: data.email,
       password: data.password
     }
@@ -58,18 +58,20 @@ export class AuthService {
       tap(response => {
         this.userChange.emit(response);
         const user = this.userService.decodeUser(response);
-        console.log(user);
+        const username = this.userService.returnUser(response);
+        console.log("username returned", username);
       }),
 
     )
   }
 
 
-logoutUser() {
-  localStorage.removeItem('userData');
-  this.userChange.next(null);
-}
+  logoutUser() {
+    localStorage.removeItem('userData');
+    this.userChange.next(null);
+  }
 
 }
+
 export { UserData, User };
 

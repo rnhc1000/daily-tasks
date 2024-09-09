@@ -13,13 +13,14 @@ export class UserService {
   decodeUser(token: UserToken) {
 
     try {
-
+   
       const decoded = decode(token.accessToken);
       const expirationTime: number = decoded.payload['exp'] * 1000;
       console.log("token", decoded);
       console.log("calculated", expirationTime);
       console.log("getTime", new Date().getTime());
-
+      console.log("username", decoded.payload['username']);
+    
       if (new Date().getTime() > expirationTime) {
         return null;
       }
@@ -37,9 +38,11 @@ export class UserService {
     
   }
 
+
   private storeUser(decoded: JwtDecode, token: UserToken) {
     localStorage.setItem('userData', JSON.stringify(
       {
+        username: decoded.payload['username'],
         email: decoded.payload['email'],
         exp: decoded.payload['exp'],
         iat: decoded.payload['iat'],
@@ -52,8 +55,8 @@ export class UserService {
   returnUser(token: UserToken) {
 
     const decoded = decode(token.accessToken);
-    const userName = decoded.payload['email'];
-    console.log("email", userName);
+    const userName = decoded.payload['username'];
+    console.log("username", userName);
 
     return userName;
 
