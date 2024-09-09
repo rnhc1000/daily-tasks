@@ -28,6 +28,8 @@ export class InputAddItemComponent {
   #cdr = inject(ChangeDetectorRef);
 
   @ViewChild('inputText') public inputText!: ElementRef;
+  
+  // @Input() public nomeUsuario!: string;
 
   @Input({ required: true }) public inputListItems: IListItems[] = [];
 

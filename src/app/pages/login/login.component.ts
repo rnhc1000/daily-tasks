@@ -7,6 +7,9 @@ import { NgForm, FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { UserToken } from '../../modules/interface/IUserToken.interface';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2/src/sweetalert2.js';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 
 @Component({
@@ -23,13 +26,13 @@ export class LoginComponent implements OnInit {
   @ViewChild('myForm', { static: true }) loginRegisterForm!: NgForm;
   email!: string;
   password!: string;
-  formMode = false; // tru == register
+  formMode = false; // true == register
   hasError = null;
 
 
   constructor(
     private authService: AuthService,
-    private router: Router ) {
+    private router: Router) {
 
   }
 
@@ -80,9 +83,46 @@ export class LoginComponent implements OnInit {
 
   }
 
-  handleErrors(error: any) {
+  handleErrors(error: HttpErrorResponse) {
+
+    if (error.status === 0) {
+      console.error('An error ocurred, error.error');
+      Swal.fire({
+        title: 'Check your network connectivity!',
+        text: 'Try again!',
+        icon: 'error',
+        showCancelButton: false,
+        confirmButtonText: `
+     OK!
+    `,
+  
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['./home'])
+        }
+      })
+
+    } else {
+      Swal.fire({
+        title: 'Authentication Services Not Avalilable!!!',
+        text: 'Call Technical Support!',
+        icon: 'error',
+        showCancelButton: false,
+        confirmButtonText: `
+     OK!
+    `,
+  
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['./home'])
+        }
+      })
+    }
 
     console.log(error);
-
+  
   }
+  
 }
+
+

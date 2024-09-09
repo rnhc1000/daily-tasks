@@ -35,15 +35,19 @@ export class ListComponent {
   public addItem = signal(true);
   public userService!: UserService;
   buttonColor = 'btn-primary';
+  usr: string =  localStorage.getItem(["userData"][0]) ?? "INVALID"
+
+  user:string = JSON.parse(this.usr).username;
 
   changeButtonColor() {
     this.buttonColor = 'btn-sucess';
   }
 
+
+
   #setListItems = signal<IListItems[]>(this.#parseItems());
   public getListItems = this.#setListItems.asReadonly();
-  // public userName = this.userService.returnUser();
-
+  
 
   #parseItems() {
     return JSON.parse(localStorage.getItem(ELocalStorage.MY_LIST) ?? '[]');
