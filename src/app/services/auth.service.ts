@@ -30,39 +30,39 @@ export class AuthService {
       catchError(this.handleErrors),
       tap(response => {
         this.userChange.emit(response);
-        const user = this.userService.decodeUser(response);
-        console.log(response);
+        // const user = this.userService.decodeUser(response);
+        // console.log(response);
       }),
 
     );
 
   }
 
-  handleErrors(errObject: HttpErrorResponse) {
-
-    if (errObject.status === 0) {
-      return throwError('Sorry! Authentication Services not Available! Try again later!!!')
-    }
-
-    return throwError(errObject.error);
-
-  }
 
   login(data: UserData) {
     return this.http.post<UserToken>('http://192.168.15.11:8080/login', {
       email: data.email,
       password: data.password
-    }
-    ).pipe(
-      catchError(this.handleErrors),
+    }).pipe(
+      catchError(error => {
+        return throwError(() => error);
+      }),
       tap(response => {
         this.userChange.emit(response);
-        const user = this.userService.decodeUser(response);
-        const username = this.userService.returnUser(response);
-        console.log("username returned", username);
+        // const user = this.userService.decodeUser(response);
+        // const username = this.userService.returnUser(response);
+        // console.log("username returned", username);
       }),
 
     )
+  }
+
+  handleErrors(errObject: HttpErrorResponse) {
+
+    console.log("AUTH ->", errObject.error.status);
+
+    return throwError(() => errObject.error);
+
   }
 
 
