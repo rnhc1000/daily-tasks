@@ -11,7 +11,6 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -21,12 +20,15 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-
+/**
+ * formMode = true => register mode,
+ * formMode = false => user mode
+ */
 
   @ViewChild('myForm', { static: true }) loginRegisterForm!: NgForm;
   email!: string;
   password!: string;
-  formMode = false; // true == register
+  formMode = false;
   hasError = null;
 
 
@@ -41,7 +43,7 @@ export class LoginComponent implements OnInit {
       // This is for later, so we don't have to enter user and pass every time
       this.loginRegisterForm.form.setValue({
         email: 'ricardo@ferreiras.dev.br',
-        password: 't0d0l1st',
+        password: 's0t3cht1',
       });
     }, 1000);
 
@@ -58,16 +60,37 @@ export class LoginComponent implements OnInit {
       if (this.formMode) {
 
         this.authService.register(formValues).subscribe(
-          data => this.handleSuccess(data),
-          error => console.log(error)
+          {
+            next: (data) => {
+
+              this.handleSuccess(data)
+
+            },
+            error: (errorObj) => {
+
+              this.handleErrors(errorObj);
+
+            }
+          }          
         );
 
       } else {
 
-        console.log('login');
+        // console.log('login');
         this.authService.login(formValues).subscribe(
-          data => this.handleSuccess(data),
-          error => this.handleErrors(error)
+           {
+            next: (data) => {
+
+              this.handleSuccess(data)
+
+            },
+            error: (errorObj) => {
+
+              this.handleErrors(errorObj)
+
+            }        
+          }
+
         );
       }
 
@@ -84,42 +107,46 @@ export class LoginComponent implements OnInit {
   }
 
   handleErrors(error: HttpErrorResponse) {
+    console.log("Error-> ",error)
 
-    if (error.status === 0) {
-      console.error('An error ocurred, error.error');
+    if (error.status === 401) {
+
       Swal.fire({
-        title: 'Check your network connectivity!',
-        text: 'Try again!',
+
+        title: 'Access not Authorized!',
+        text: 'Username or Password invalid! Try again...',
         icon: 'error',
         showCancelButton: false,
-        confirmButtonText: `
-     OK!
-    `,
-  
+        confirmButtonText: `OK!`,
+      
       }).then((result) => {
+
         if (result.isConfirmed) {
+
           this.router.navigate(['./home'])
+
         }
       })
 
     } else {
+
       Swal.fire({
-        title: 'Authentication Services Not Avalilable!!!',
-        text: 'Call Technical Support!',
+
+        title: 'Check your network connectivity!',
+        text: 'Try again!',
         icon: 'error',
         showCancelButton: false,
-        confirmButtonText: `
-     OK!
-    `,
-  
+        confirmButtonText: `OK!`,
+
       }).then((result) => {
+
         if (result.isConfirmed) {
+
           this.router.navigate(['./home'])
+
         }
       })
     }
-
-    console.log(error);
   
   }
   
