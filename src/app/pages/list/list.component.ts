@@ -12,7 +12,7 @@ import { ELocalStorage } from '../../modules/enums/ELocalStorage.enum';
 // Components
 import { InputAddItemComponent } from '../../modules/components/input-add-item/input-add-item.component';
 import { InputListItemComponent } from '../../modules/components/input-list-item/input-list-item.component';
-import { DatePipeComponent } from '../../modules/components/footer/date-pipe/date-pipe.component';
+import { DatePipeComponent } from '../../modules/components/date-pipe/date-pipe.component';
 import { NavbarComponent } from '../../modules/components/navbar/navbar.component';
 import { FooterComponent } from "../../modules/components/footer/footer.component";
 import { LogoutComponent } from '../../modules/components/logout/logout.component';

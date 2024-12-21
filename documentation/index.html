@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daily-task documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">daily-task documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>task-list - Manage your daily tasks</h1>
+<p>This is a simple personal app to add small reminders for the tasks you need to tackle every single day. Simply jot down a quick note about a task, add it to a list, and you&#39;re done. It&#39;s implemented using Angular 17+ as the frontend framework to practice new skills. The idea is to have an easy and quick reminder of completed and pending tasks at the end of the day, without the usual burden of other apps. So, tired of a thousand clicks and a complex UI decided to create an uncomplicated online tool for quickly noting my tasks, eliminating the need for Post-it notes all over the place. The roadmap for new features will be as follows:</p>
+<p>If you need any further adjustments, feel free to let me know. 😊
+The roadmap of new features will be as follows:</p>
+<h2><em>Roadmap of Future App Features</em></h2>
+<ul>
+<li>URL: <a href="https://todo-list.ferreiras.dev.br">https://todo-list.ferreiras.dev.br</a></li>
+<li>Timestamp of each task indicating start and end time.</li>
+<li>Autentication based on Argon2 and Pepper with notification being sent to a registered email</li>
+<li>Usage of localStorage or Firebase to allow history pagination of tasks completed or !completed</li>
+<li>Calendar + agenda to allow schedule tasks days ahead</li>
+<li>Notification of tasks to be done along the day.</li>
+</ul>
+<h2><em>Table of contents</em></h2>
+<ul>
+<li><a href="#task-list---manage-your-daily-tasks">task-list - Manage your daily tasks</a><ul>
+<li><a href="#roadmap-of-future-app-features"><em>Roadmap of Future App Features</em></a></li>
+<li><a href="#table-of-contents"><em>Table of contents</em></a></li>
+<li><a href="#overview"><em>Overview</em></a></li>
+<li><a href="#screenshot"><em>Screenshot</em></a></li>
+<li><a href="#links"><em>Links</em></a></li>
+<li><a href="#built-with"><em>Built with</em></a></li>
+<li><a href="#what-i-practiced"><em>What I practiced</em></a></li>
+<li><a href="#continued-development"><em>Continued development</em></a><ul>
+<li><a href="#useful-resources"><em>Useful resources</em></a></li>
+</ul>
+</li>
+<li><a href="#author"><em>Author</em></a></li>
+<li><a href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+<h2><em>Overview</em></h2>
+<p>The design is structured as shown:</p>
+<ul>
+<li>src|<ul>
+<li>app |<ul>
+<li>modules |</li>
+<li>to-do-list |<ul>
+<li>components |<ul>
+<li>date-pipe</li>
+<li>input-add-item</li>
+<li>input-list-items</li>
+</ul>
+</li>
+<li>enum</li>
+<li>interface</li>
+<li>pages</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>assets |</li>
+<li>scss|<ul>
+<li>base</li>
+<li>components</li>
+<li>layout</li>
+<li>theme</li>
+</ul>
+</li>
+<li>_index.scss</li>
+</ul>
+</li>
+<li>index.html</li>
+<li>main.ts</li>
+<li>styles.css</li>
+</ul>
+<h2><em>Screenshot</em></h2>
+<p><a href="https://todo-list.ferreiras.dev.br"><img src="./dailyTasks.png" alt="" class="img-responsive"></a></p>
+<h2><em>Links</em></h2>
+<ul>
+<li>Live Site URL: [<a href="https://todo-list.ferreiras.dev.br%5D">https://todo-list.ferreiras.dev.br]</a></li>
+</ul>
+<h2><em>Built with</em></h2>
+<p><a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,angular,git,html,css,materialui,nginx,docker,redhat,aws,vscode" alt="My Sillks" class="img-responsive"></a></p>
+<h2><em>What I practiced</em></h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-tsx">import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+  inject,
+} from &#39;&#64;angular/core&#39;;
+
+// Interfaces
+import { NgClass } from &#39;&#64;angular/common&#39;;
+import { IListItems } from &#39;../../interface/IListItems.interface&#39;;
+import { DatePipeComponent } from &quot;../date-pipe/date-pipe.component&quot;;
+
+&#64;Component({
+    selector: &#39;app-input-add-item&#39;,
+    standalone: true,
+    templateUrl: &#39;./input-add-item.component.html&#39;,
+    styleUrl: &#39;./input-add-item.component.scss&#39;,
+    imports: [NgClass, DatePipeComponent]
+})
+export class InputAddItemComponent {
+  #cdr = inject(ChangeDetectorRef);
+
+  &#64;ViewChild(&#39;inputText&#39;) public inputText!: ElementRef;
+
+  &#64;Input({ required: true }) public inputListItems: IListItems[] = [];
+
+  &#64;Output() public outputAddListItem = new EventEmitter&lt;IListItems&gt;();
+  public focusAndAddItem(value: string) {
+    if (value) {
+      this.#cdr.detectChanges();
+      this.inputText.nativeElement.value = &#39;&#39;;
+
+      const currentDate = new Date();
+      const timestamp = currentDate.getTime();
+      const id = `ID ${timestamp}`;
+
+      this.outputAddListItem.emit({
+        id,
+        checked: false,
+        value,
+      });
+
+      return this.inputText.nativeElement.focus();
+    }
+  }
+}</code></pre></div><h2><em>Continued development</em></h2>
+<ul>
+<li>Next step: Persist the tasks in a DB, Firebase/MongoDB</li>
+</ul>
+<h3><em>Useful resources</em></h3>
+<ul>
+<li>[<a href="https://angular.io%5D">https://angular.io]</a> Mandatory stop by to reaaly know the intrimcacies of Angular.</li>
+<li>[<a href="https://material.angular.io/%5D">https://material.angular.io/]</a> Material Design components for Angular</li>
+<li>[<a href="https://html-css-js.com/%5D">https://html-css-js.com/]</a> Mandatory pit stop at this site.</li>
+</ul>
+<h2><em>Author</em></h2>
+<ul>
+<li>Website - [<a href="https://ferreiras.dev.br%5D">https://ferreiras.dev.br]</a></li>
+</ul>
+<h2>Acknowledgments</h2>
+<ul>
+<li>@rnhc1000 and God</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
