@@ -59,6 +59,5 @@ export class UserService {
     console.log("username", userName);
 
     return userName;
-
   }
 }

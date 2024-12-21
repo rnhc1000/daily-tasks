@@ -1,18 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+/**
+ * Date Component to show date and time
+ */
 @Component({
   selector: 'date-pipe',
   standalone: true,
   imports: [CommonModule],
-  template: `
-  <div>
-    <h2 class="date-pipe-text"> {{ date | date:'fullDate' }} </h2>
-  </div>
-  `
+  templateUrl: './date-pipe.component.html'
 })
 export class DatePipeComponent {
 
+  /** Date and Time shown */
   date: Date = new Date();
   
 }

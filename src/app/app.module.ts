@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DatePipeComponent } from './modules/components/footer/date-pipe/date-pipe.component';
+import { DatePipeComponent } from './modules/components/date-pipe/date-pipe.component';
 import { FooterComponent } from './modules/components/footer/footer.component';
 import { InputAddItemComponent } from './modules/components/input-add-item/input-add-item.component';
 import { InputListItemComponent } from './modules/components/input-list-item/input-list-item.component';

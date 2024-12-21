@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DatePipeComponent } from '../../modules/components/footer/date-pipe/date-pipe.component';
+import { DatePipeComponent } from '../../modules/components/date-pipe/date-pipe.component';
 import { NavbarComponent } from '../../modules/components/navbar/navbar.component';
 import { FooterComponent } from '../../modules/components/footer/footer.component';
 import { CommonModule } from '@angular/common';
